@@ -1,6 +1,6 @@
 21baf7fd38ef069120b9a6c829da75ba6e9baadbd4f70cb46e52dae1dc000f1f  ./.gitignore
 8ea21a618015d1a44a69381381918c0479e68c47e1a2d75ce10ef766c127d702  ./LICENSE
-d2bb725d0810de0825319f40cdeef44cb25597db3031c82ee7e35323d7e5010f  ./README.md
+91a4dddafa217d0e662073ffab73bc4229541d212b3cb81f1b6455aeed5497c0  ./README.md
 88b50a9b3c0c5ed49be336124511c2d1684d6e08c00324ab4e4033d213deecd8  ./RELEASE_AUDIT.md
 115f9d368f5e8a859d01ba2bfff78b695cb43e147f26769b2b09a9e071d9d8e0  ./THIRD_PARTY_NOTICES.md
 a65cf7aab4dd906f4865f4671932df3099453e2fe562d5b149e6dce6e0d2ee16  ./assets/readme-hero.svg
@@ -604,7 +604,7 @@ dbc32dbf78aaa5c6868ebed6cd9208865b83bffff40e4a37c02c9bf53653fecd  ./ledger/legac
 3f50d263c6b4d7113b1b3d6a5281a19ff48759f5c5fc1cf6b7f566cb01e1d03a  ./method/CHALLENGE.md
 a631754ff5dd1a9ebcce7cbf78d784df41c48c91a4265242eec58b8948fb1afb  ./method/METHOD.md
 f7706635f79bb5e7d7cc5c19e74031de7929b40923642f2c976d4d47ceee1fc1  ./method/VALIDATION.md
-6b72f1ddd380aeb089c0c8359c30d1aee1c2d14c3ee1584c58fe4cb30ef291ae  ./report/ARC-White-Box-Phase1-Algorithmic-Contribution.pdf
+b90da51d15697ddbab831812cbf4a4d0b8077b232145dbc844e4488031779deb  ./report/ARC-White-Box-Phase1-Algorithmic-Contribution-327801.pdf
 97379b69e2dc7484dc22ce01ebc67dead0ebda4f5373ed50b4fa9918b06ee503  ./submission/extracted/estimator.py
 c1eb5bd187934b1c92c96000082b2c14ebf0b24558543b22bbe5cb73fd8d3ea8  ./submission/extracted/manifest.json
 f41ea4cc0b7ebaebb61377bb20c540db8311bc3f9c0518ab5347747537463f01  ./submission/extracted/vendor_modules.whestdata

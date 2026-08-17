@@ -27,7 +27,8 @@ The exact submission archive has SHA-256 digest
 
 ## Release map
 
-- [`report/`](report/) contains the final algorithmic-contribution report.
+- [`report/ARC-White-Box-Phase1-Algorithmic-Contribution-327801.pdf`](report/ARC-White-Box-Phase1-Algorithmic-Contribution-327801.pdf)
+  is the final algorithmic-contribution report.
 - [`submission/`](submission/) contains the exact AIcrowd archive and its
   unpacked implementation.
 - [`evidence/`](evidence/) contains the remote receipt, exact Mini100 replay,
