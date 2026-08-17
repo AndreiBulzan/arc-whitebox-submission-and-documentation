@@ -1,0 +1,142 @@
+{
+  "comparisons_vs_r94": {
+    "holdout": {
+      "paired_r99_minus_r94": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "p95": 0.0
+      },
+      "r94": {
+        "max": 1.3293745853340043e-06,
+        "mean": 2.825879931486056e-07,
+        "median": 2.1171600694064638e-07,
+        "p90": 4.939244863452609e-07,
+        "p95": 6.623285517288719e-07
+      },
+      "r99": {
+        "max": 1.3293745853340043e-06,
+        "mean": 2.825879931486056e-07,
+        "median": 2.1171600694064638e-07,
+        "p90": 4.939244863452609e-07,
+        "p95": 6.623285517288719e-07
+      },
+      "raw_ratio": 1.0,
+      "raw_reduction": 0.0,
+      "rows": 50,
+      "rows_equal": 50,
+      "rows_r99_better": 0
+    },
+    "pooled": {
+      "paired_r99_minus_r94": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "p95": 0.0
+      },
+      "r94": {
+        "max": 1.3293745853340043e-06,
+        "mean": 2.530270006334193e-07,
+        "median": 1.910165959815818e-07,
+        "p90": 4.5687399427012375e-07,
+        "p95": 5.499987883661568e-07
+      },
+      "r99": {
+        "max": 1.3293745853340043e-06,
+        "mean": 2.530270006334193e-07,
+        "median": 1.910165959815818e-07,
+        "p90": 4.5687399427012375e-07,
+        "p95": 5.499987883661568e-07
+      },
+      "raw_ratio": 1.0,
+      "raw_reduction": 0.0,
+      "rows": 100,
+      "rows_equal": 100,
+      "rows_r99_better": 0
+    },
+    "public": {
+      "paired_r99_minus_r94": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "p95": 0.0
+      },
+      "r94": {
+        "max": 1.2993912209440687e-06,
+        "mean": 2.2346600811823301e-07,
+        "median": 1.7754642661933493e-07,
+        "p90": 3.665148019838239e-07,
+        "p95": 4.770497908615035e-07
+      },
+      "r99": {
+        "max": 1.2993912209440687e-06,
+        "mean": 2.2346600811823301e-07,
+        "median": 1.7754642661933493e-07,
+        "p90": 3.665148019838239e-07,
+        "p95": 4.770497908615035e-07
+      },
+      "raw_ratio": 1.0,
+      "raw_reduction": 0.0,
+      "rows": 50,
+      "rows_equal": 50,
+      "rows_r99_better": 0
+    }
+  },
+  "evidence_label": "measured whole for exact 100-row archive execution; broad statistical for official-Mini100 accuracy; projection for count-only score; measured whole for the provisional quiet ABBA pricing ratio",
+  "flops": {
+    "r94_initialized_distinct": [
+      125835566424
+    ],
+    "r94_steady_distinct": [
+      123391852159
+    ],
+    "r99_initialized_distinct": [
+      125815743768
+    ],
+    "r99_steady_distinct": [
+      123372029503
+    ],
+    "steady_count_ratio_r99_over_r94": 0.9998393519859443,
+    "steady_count_reduction": 0.00016064801405568652
+  },
+  "gates": {
+    "all_predictions_byte_identical": true,
+    "holdout_raw_ratio_le_1p002": true,
+    "pooled_raw_ratio_le_1p001": true,
+    "provisional_quiet_abba_adjusted_ratio_le_0p998": true,
+    "public_raw_ratio_le_1p002": true,
+    "r94_initialized_count": true,
+    "r94_steady_count": true,
+    "r99_initialized_count": true,
+    "r99_steady_count": true
+  },
+  "hashes": {
+    "abba": "9b253cb64d21f736ff754bdd078492f686cda9c2fee04551e9ccd6b8dd9ed6db",
+    "archive": "f6824fa6bbc79368e358da847b1aca9597b0be79ee1afbde10f5b8adedb059ed",
+    "candidate": "2c25abe3cb276c9d250a4500d6ba483b2a61a4c2b93a76e149bf8b12c768f90c",
+    "mini": "914aeb73cc7e39f6c110022d87ac8374f81c6340db616afb3f7a79af56bc6397",
+    "prereg": "bdef34a8ad592d7567c41027512035ce26f4e78c152662f7d20520a6c6e3b33c",
+    "r94": "2fef9bd73812b53a494ca2a928d18ebf738326282a35ebfb02f09dc070aad5c2",
+    "r99": "a2671466abd64d788d99253c23a22fe909eaff16a7c99f999895ce4399c77577",
+    "source": "4bc91ae0324beefb228260cd335e247ead05d0e02b5fa84f9568d8f977c6a546"
+  },
+  "prediction_identity": {
+    "byte_identical_all_layers_all_rows": true,
+    "prediction_sha256": "379413166b502fb74a8b4e324163b8b7fc7980bcde69e064ab8a0027c2aba803"
+  },
+  "pricing": {
+    "boundary": "a second quiet paired control is required before promotion",
+    "count_only_adjusted_ratio_projection": 0.9998393519859443,
+    "five_lane_timing_used_for_pricing": false,
+    "provisional_quiet_abba_effective_ratio": 0.9921318889512261
+  },
+  "remote_actions": 0,
+  "schema": "codex.k129-r99.exact-archive-mini100.postseal.r1",
+  "status": "accuracy_and_count_gates_pass_quiet_pricing_confirmation_pending",
+  "submissions": 0,
+  "targets_opened_after_capture_seal": true,
+  "uploads": 0
+}

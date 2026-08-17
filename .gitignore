@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.html
+*.htm

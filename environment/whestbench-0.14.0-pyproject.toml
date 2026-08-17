@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/whestbench"]
+
+[project]
+name = "whestbench"
+version = "0.14.0"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "datasets>=2.20",
+    "faker~=37.0",
+    "flopscope>=0.10.0,<0.11.0",  # 0.10.0: out=/symmetry-tag billing-integrity fixes (destination writes priced, tag-forgery discounts voided, refusals uniformly free) + einsum out= now follows numpy's casting rule (BREAKING: silently-truncating calls raise TypeError) — absolute FLOP counts change, re-baseline scores. Floor pinned to 0.10.0 (the grader's version) so CI's `--upgrade-package` resolution is deterministic. <0.11.0 caps the next breaking minor.
+    "httpx>=0.27",
+    "huggingface_hub>=0.24",
+    "jinja2>=3.1",
+    "plotext",
+    "pyarrow>=14",
+    "pyyaml>=6.0",
+    "rich",
+    "threadpoolctl>=3.0",
+    "toml>=0.10",
+    "tqdm",
+]
+
+[project.scripts]
+whest = "whestbench.cli:main"
+whestbench = "whestbench.cli:main"
+
+[project.optional-dependencies]
+gpu = ["torch>=2.1"]
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.0",
+    "gitlint>=0.19",
+    "pytest>=8.2.0",
+    "pyright>=1.1.0",
+    "ruff>=0.6.0",
+]
+server = [
+    "flopscope-server>=0.10.0,<0.11.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/conftest.py" = ["E402"]
+
+[tool.pyright]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
+include = [
+    "src",
+    "tests",
+    "main.py",
+]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "pep621"
+tag_format = "v$version"
+update_changelog_on_bump = true
+major_version_zero = true
+changelog_incremental = true

@@ -1,0 +1,38 @@
+{
+  "bundled_file_bytes": 25370886,
+  "byte_cap": 52428800,
+  "estimator_sha256": "97379b69e2dc7484dc22ce01ebc67dead0ebda4f5373ed50b4fa9918b06ee503",
+  "evidence_label": "component",
+  "execution": {
+    "estimator_setups": 0,
+    "physical_rows": 0,
+    "predictions": 0,
+    "remote_actions": 0,
+    "submissions": 0,
+    "targets_opened": 0,
+    "uploads": 0
+  },
+  "kernel_source_sha256": "8cdc2e63e75f11d4e3993f2b34bbc699bd4b0c8fec822bf65861a9bf35293573",
+  "manifest_sha256": "c1eb5bd187934b1c92c96000082b2c14ebf0b24558543b22bbe5cb73fd8d3ea8",
+  "numerical_runtime": "candidate_k129_r99_r94_matmul_out_v0100_20260810",
+  "numerical_source_sha256": "2c25abe3cb276c9d250a4500d6ba483b2a61a4c2b93a76e149bf8b12c768f90c",
+  "output": "submission/submission_327801.tar.gz",
+  "package_bytes": 25195864,
+  "package_sha256": "f6824fa6bbc79368e358da847b1aca9597b0be79ee1afbde10f5b8adedb059ed",
+  "provenance": {
+    "appended_vendor_entries": 2,
+    "seed_vendor_entries": 699,
+    "seed_vendor_local_prefix_bytes": 25216475,
+    "successor_vendor_entries": 701
+  },
+  "regular_file_count": 3,
+  "schema": "codex.k129_r99.r94_matmul_out.package_build.v1",
+  "seed_archive_sha256": "fbb9e28232c46c5fde2bde57bb2805bdf758aba3f2626485da7e7c6183917e77",
+  "status": "pass",
+  "tar_members": [
+    "estimator.py",
+    "vendor_modules.whestdata",
+    "manifest.json"
+  ],
+  "vendor_sha256": "f41ea4cc0b7ebaebb61377bb20c540db8311bc3f9c0518ab5347747537463f01"
+}

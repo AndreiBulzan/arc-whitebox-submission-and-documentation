@@ -1,0 +1,138 @@
+[project]
+name = "flopscope"
+version = "0.10.0"
+description = "NumPy-compatible math primitives with FLOP counting for the Mechanistic Estimation Challenge"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "numpy>=2.0.0,<2.5.0",
+    "opt_einsum>=3.3.0,<4.0.0",
+    "rich>=14.3.3",
+]
+
+[project.optional-dependencies]
+server = ["flopscope-server==0.10.0"]
+dev = [
+    "commitizen>=4.0",
+    "gitlint>=0.19",
+    "pytest>=7.0",
+    "pytest-cov",
+    "psutil>=5.9",
+    "pyright>=1.1.408,<1.2.0",
+    "rich>=13.0",
+    "ruff>=0.4",
+    "scipy>=1.10",
+]
+docs = [
+    "numpydoc>=1.10",
+]
+sympy = [
+    "sympy>=1.11",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flopscope", "benchmarks"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/flopscope/data/default_weights.json" = "flopscope/data/default_weights.json"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "pep621"
+tag_format = "v$version"
+update_changelog_on_bump = true
+major_version_zero = true
+changelog_incremental = true
+version_files = [
+    "src/flopscope/__init__.py:^__version__",
+    "pyproject.toml:flopscope-server==",
+    "flopscope-server/pyproject.toml:^version",
+    "flopscope-server/src/flopscope_server/__init__.py:^__version__",
+    "flopscope-server/pyproject.toml:flopscope==",
+    "flopscope-client/pyproject.toml:^version",
+    "flopscope-client/src/flopscope/__init__.py:^__version__",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--ignore=tests/numpy_compat --ignore=tests/client_compat --ignore=tests/parity -n auto"
+markers = [
+    "parity_server: differential parity test needing a live flopscope-server",
+]
+filterwarnings = [
+    # flopscope's own tests call configure() on the in-process backend
+    # legitimately; the participant-facing no-op notice is just noise here.
+    "ignore::flopscope.errors.ConfigureNoOpWarning",
+]
+
+[tool.coverage.run]
+source = ["flopscope"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+]
+
+[tool.pyright]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
+include = ["src", "tests"]
+# The client-parity harness imports the CLIENT flopscope package
+# (flopscope-client/src), a different package root added to sys.path at runtime
+# that this native-rooted pyright config cannot resolve. It runs as its own
+# pytest process; exclude it from static analysis. (Defaults preserved.)
+exclude = ["**/node_modules", "**/__pycache__", "**/.*", "tests/client_compat"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+extend-select = ["B", "C4", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# Public re-exports: imports are intentionally "unused" from ruff's perspective
+"src/flopscope/random/__init__.py" = ["F401"]
+"src/flopscope/stats/__init__.py" = ["F401"]
+# Deferred imports after version-check call trigger E402; compact guards use E701
+"src/flopscope/__init__.py" = ["E402"]
+"src/flopscope/fft/_transforms.py" = ["E701"]
+# Accumulation subpackage: mid-file imports at section boundaries are intentional
+# (each phase of the regime ladder co-locates its imports with its code, mirroring
+# the JS implementation's structure).
+"src/flopscope/_accumulation/*" = ["E402"]
+# Tests: unused variables are intentional (assert no exception raised)
+"tests/**" = ["F841", "E402", "E501"]
+# Benchmarks: long f-strings for subprocess setup code
+"benchmarks/**" = ["E501"]
+# Scripts, examples, docker: cosmetic issues not worth fixing in utility code
+"scripts/**" = ["E501", "E402", "F401", "F841"]
+"examples/**" = ["E501", "E402", "F401", "F841"]
+"docker/**" = ["E501", "E402", "F401", "F841"]
+# Client/server packages: E402 in __init__.py (deferred imports pattern)
+"flopscope-client/**" = ["E402", "F401", "E501", "F841"]
+"flopscope-server/**" = ["E402", "F401", "E501", "F841"]
+# Core source: long lines in dense function signatures and docstrings
+"src/**" = ["E501"]
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.151.10",
+    "pytest-xdist>=3.8.0",
+]
+
+# Local-development override: resolve flopscope-server from the in-tree
+# subdirectory rather than PyPI. The published wheel metadata only contains
+# the `Requires-Dist: flopscope-server==0.3.0` from [optional-dependencies];
+# this [tool.uv.sources] block is uv-specific and never lands in any wheel.
+[tool.uv.sources]
+flopscope-server = { path = "flopscope-server", editable = true }

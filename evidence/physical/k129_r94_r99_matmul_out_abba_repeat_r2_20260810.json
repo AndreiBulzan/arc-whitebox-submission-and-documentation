@@ -1,0 +1,108 @@
+{
+  "association": [
+    {
+      "maximum_absolute": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "maximum_absolute": 0.0,
+      "relative_rmse": 0.0
+    }
+  ],
+  "controller_wall_s": 324.63884047600004,
+  "evidence_label": "measured whole",
+  "gates": {
+    "all_effective_below_240b": true,
+    "association_within_limit": true,
+    "candidate_effective_lower": true,
+    "candidate_wall_safe": true,
+    "deterministic_r94": true,
+    "deterministic_r99": true
+  },
+  "hashes": {
+    "prereg": "bdef34a8ad592d7567c41027512035ce26f4e78c152662f7d20520a6c6e3b33c",
+    "r94_archive": "fbb9e28232c46c5fde2bde57bb2805bdf758aba3f2626485da7e7c6183917e77",
+    "r99_archive": "f6824fa6bbc79368e358da847b1aca9597b0be79ee1afbde10f5b8adedb059ed",
+    "source": "648904dedcecd6554bf0e201b2dc55124548bf0201abc021cf3ea70e2c29455d",
+    "worker": "23eff3dfa18024d7ae4d4562f431267ff63ed47d520ea8eb4879e342c2e417e6"
+  },
+  "medians": {
+    "R94": {
+      "effective_compute": 145055195559.00003,
+      "flops_used": 123391852159.0,
+      "residual_wall_time_s": 0.21663343400000024,
+      "wall_time_s": 30.6708959915
+    },
+    "R99": {
+      "effective_compute": 144119210953.0,
+      "flops_used": 123372029503.0,
+      "residual_wall_time_s": 0.20747181449999985,
+      "wall_time_s": 29.847006751499997
+    }
+  },
+  "order": [
+    "R94",
+    "R99",
+    "R99",
+    "R94"
+  ],
+  "r99_effective_ratio": 0.9935473899959735,
+  "r99_effective_reduction": 0.006452610004026527,
+  "remote_actions": 0,
+  "rows": [
+    {
+      "effective_compute": 143166659759.0,
+      "flops_used": 123391852159,
+      "initialized_effective_compute": 167752213824.00006,
+      "initialized_flops": 125835566424,
+      "label": "R94",
+      "position": 0,
+      "prediction_sha256": "550c263642d1007681a2c7f8127d151981b4f76fd09b38a4fca248ae6e830d6c",
+      "residual_wall_time_s": 0.19774807599999988,
+      "wall_time_s": 29.904377372,
+      "worker_receipt_sha256": "aae5f29d6fc191b669ae613b226d5cd3803a80e92a74b2c42d1016417755319f"
+    },
+    {
+      "effective_compute": 144577319603.0,
+      "flops_used": 123372029503,
+      "initialized_effective_compute": 169548987268.00018,
+      "initialized_flops": 125815743768,
+      "label": "R99",
+      "position": 1,
+      "prediction_sha256": "550c263642d1007681a2c7f8127d151981b4f76fd09b38a4fca248ae6e830d6c",
+      "residual_wall_time_s": 0.21205290099999985,
+      "wall_time_s": 29.889602245,
+      "worker_receipt_sha256": "a78a189274c28f3693a5ea79fdde494db869a96f3666affd6e587797633e5208"
+    },
+    {
+      "effective_compute": 143661102303.0,
+      "flops_used": 123372029503,
+      "initialized_effective_compute": 170903870368.0003,
+      "initialized_flops": 125815743768,
+      "label": "R99",
+      "position": 2,
+      "prediction_sha256": "550c263642d1007681a2c7f8127d151981b4f76fd09b38a4fca248ae6e830d6c",
+      "residual_wall_time_s": 0.20289072799999985,
+      "wall_time_s": 29.804411258,
+      "worker_receipt_sha256": "cf512a2d22ae6368611f04d374492c927cf0c0940fe9ffa79ffa6ac3795f223f"
+    },
+    {
+      "effective_compute": 146943731359.00006,
+      "flops_used": 123391852159,
+      "initialized_effective_compute": 180891354324.0003,
+      "initialized_flops": 125835566424,
+      "label": "R94",
+      "position": 3,
+      "prediction_sha256": "550c263642d1007681a2c7f8127d151981b4f76fd09b38a4fca248ae6e830d6c",
+      "residual_wall_time_s": 0.2355187920000006,
+      "wall_time_s": 31.437414611,
+      "worker_receipt_sha256": "4aa04829d1ee67292b446ed36fd9ffffd078a0d242fb9066d262b8ceb95fc682"
+    }
+  ],
+  "schema": "codex.k129.r94-r99.matmul-out.abba.r1",
+  "scope": "isolated exact-package R94/R99/R99/R94 initialized-plus-steady comparison under one benchmark lock",
+  "status": "pass_promote_mini100",
+  "submissions": 0,
+  "targets_opened": 0,
+  "uploads": 0
+}
